@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>蝦皮等候畫面</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="https://shopee.tw" id="logo">
+    <img src="imgs/shopee_logo.png" alt="Shopee Logo">
+  </a>
+</header>
+<main>
+  <div class="login-container">
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <input type="text" id="username" placeholder="請輸入帳號" required>
+      <input type="password" id="password" placeholder="請輸入密碼" required>
+      <button type="submit">登入</button>
+    </form>
+    <div id="prank-message" style="display: none;">
+      <h1>你被騙了！！！</h1>
+    </div>
+  </div>
+</main>
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    const form = document.getElementById('loginForm');
+    const prankMessage = document.getElementById('prank-message');
+
+    form.style.display = 'none';
+    prankMessage.style.display = 'block';
+  }
+</script>
+</body>
+</html>
